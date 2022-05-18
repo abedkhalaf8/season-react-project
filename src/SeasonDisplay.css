@@ -1,0 +1,29 @@
+h1 {
+    font-size: 45px;
+    font-family: monospace;
+    color: red;
+}
+
+.season-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.summer {
+  background-color: yellow;
+}
+
+.winter {
+    background-color: blue;
+}
+
+.season-display.winter i {
+    color: blue;
+}
+
+.season-display.summer i {
+    color: yellowgreen;
+}
+
