@@ -1,5 +1,6 @@
 import React from 'react';
-import SeasonDisplay from './SeasonDisplay'
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 import { createRoot } from 'react-dom/client';
 
 class App extends React.Component {
@@ -19,8 +20,9 @@ class App extends React.Component {
      if (!this.state.errMessage && this.state.lat){
       return <SeasonDisplay lat={this.state.lat} />
      }
- return <div>Loading!</div>
-}
+
+ return  <Spinner message="Loading.."/>
+   }
 }
 const container = document.getElementById('root')
 const root = createRoot(container);
