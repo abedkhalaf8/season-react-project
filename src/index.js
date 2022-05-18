@@ -12,17 +12,23 @@ class App extends React.Component {
    err => this.setState({ errMessage : err.message})
 )}
 
-  render() {
-     if (this.state.errMessage && !this.state.lat){
-        return <div>Error: {this.state.errMessage}</div>
-     
-     }
-     if (!this.state.errMessage && this.state.lat){
-      return <SeasonDisplay lat={this.state.lat} />
-     }
-
- return  <Spinner message="Loading.."/>
+renderContent () {
+   if (this.state.errMessage && !this.state.lat){
+      return <div>Error: {this.state.errMessage}</div>
+   
    }
+   if (!this.state.errMessage && this.state.lat){
+    return <SeasonDisplay lat={this.state.lat} />
+   }
+
+   return  <Spinner message="Loading.."/>
+}
+ render() {
+    return (
+     <div className="border red">{this.renderContent()}</div>
+    )
+}
+ 
 }
 const container = document.getElementById('root')
 const root = createRoot(container);
